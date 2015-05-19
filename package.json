@@ -1,0 +1,19 @@
+{
+  "name": "fxa-openid-bridge",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MPL 2.0",
+  "dependencies": {
+    "boom": "^2.7.1",
+    "convict": "^0.7.0",
+    "hapi": "^8.4.0",
+    "mozlog": "^2.0.1",
+    "openid": "^0.5.11",
+    "poolee": "^1.0.0"
+  }
+}
