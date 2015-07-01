@@ -47,7 +47,7 @@ server.ext(
 var ext = [
   new openid.AttributeExchange(
     {
-      "http://axschema.org/contact/email": "required"
+      "http://axschema.org/contact/email": "optional"
     }
   )
 ]
@@ -82,6 +82,17 @@ server.route([
     path: '/verify',
     config: {},
     handler: function (req, reply) {
+      if (!req.url.search) {
+        reply(
+          '<?xml version="1.0" encoding="UTF-8"?>\n'
+          + '<xrds:XRDS xmlns:xrds="xri://$xrds" xmlns="xri://$xrd*($v*2.0)"><XRD>'
+          + '<Service xmlns="xri://$xrd*($v*2.0)">'
+          + '<Type>http://specs.openid.net/auth/2.0/return_to</Type>'
+          + '<URI>' + config.server.publicUrl + '/verify</URI>'
+          + '</Service></XRD></xrds:XRDS>'
+          ).type('application/xrds+xml')
+        return
+      }
       rp.verifyAssertion(
         url.format(req.url),
         function (err, result) {
