@@ -63,11 +63,11 @@ var rp = new openid.RelyingParty(
 
 server.route([
   {
-    method: 'POST',
+    method: 'GET',
     path: '/authenticate',
     config: {},
     handler: function (req, reply) {
-      var identifier = req.payload.identifier
+      var identifier = req.query.identifier
       rp.authenticate(
         identifier,
         false,
@@ -135,7 +135,7 @@ server.route([
     handler: function (req, reply) {
       reply(
         '<!DOCTYPE html><html><body>'
-        + '<form method="post" action="authenticate">'
+        + '<form method="get" action="authenticate">'
         + '<p>Enter an OpenID identifier url</p>'
         + '<input name="identifier" value="https://me.yahoo.com" />'
         + '<input type="submit" value="Login" />'
