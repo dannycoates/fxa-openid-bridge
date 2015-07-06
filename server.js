@@ -116,7 +116,8 @@ server.route([
                   '/openid?uid=' + data.uid +
                   '&session=' + data.sessionToken +
                   '&key=' + data.keyFetchToken +
-                  '&authAt=' + data.authAt)
+                  '&authAt=' + data.authAt +
+                  '&service=sync&context=fx_desktop_v1')
               }
             )
           }
