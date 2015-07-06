@@ -101,15 +101,14 @@ server.route([
             Pool.request(
               {
                 method: 'POST',
-                url: config.peers.auth + '/v1/account/login_or_create',
+                url: config.peers.auth + '/v1/account/sso',
                 headers: {
                   'Content-Type': 'application/json'
                 }
               },
               JSON.stringify({
-                ppp: result.claimedIdentifier,
-                provider: 'yahoo',
-                email: result.email
+                ssoId: result.claimedIdentifier,
+                provider: 'yahoo'
               }),
               function (err, res, body) {
                 var data = JSON.parse(body)
