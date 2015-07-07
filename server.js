@@ -117,7 +117,7 @@ server.route([
                   '&session=' + data.sessionToken +
                   '&key=' + data.keyFetchToken +
                   '&authAt=' + data.authAt +
-                  '&service=sync&context=fx_desktop_v1')
+                  '&service=sync&context=iframe')
               }
             )
           }
