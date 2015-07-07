@@ -101,7 +101,7 @@ server.route([
             Pool.request(
               {
                 method: 'POST',
-                url: config.peers.auth + '/v1/account/sso',
+                url: config.peers.auth + '/v1/account/sso?keys=true',
                 headers: {
                   'Content-Type': 'application/json'
                 }
