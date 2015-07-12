@@ -108,7 +108,7 @@ server.route([
               },
               JSON.stringify({
                 ssoId: result.claimedIdentifier,
-                provider: 'yahoo'
+                provider: 'p11'
               }),
               function (err, res, body) {
                 var data = JSON.parse(body)
