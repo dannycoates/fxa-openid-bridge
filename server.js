@@ -117,7 +117,7 @@ server.route([
                   '&session=' + data.sessionToken +
                   '&key=' + data.keyFetchToken +
                   '&authAt=' + data.authAt +
-                  '&service=sync&context=iframe&partner=p11') // TODO
+                  '&service=sync&context=fx_desktop_v2&partner=p11') // TODO
               }
             )
           }
